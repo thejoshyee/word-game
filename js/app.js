@@ -27,7 +27,7 @@ startGameBtn.addEventListener('click', e => {
 let getRandomPhraseAsArray = (arr) => {
     let phrase = phrases[Math.floor(Math.random() * phrases.length)].split(''); 
     return phrase;
-};
+}
 
 getRandomPhraseAsArray(phrases);
 
@@ -40,18 +40,17 @@ let addPhraseToDisplay = (arr) => {
         let ulList = document.querySelector('#phrase ul');
         liList.textContent = arr[i];
         ulList.appendChild(liList);
-
-        if (liList.textContent === '') {
+        
+        if (liList.textContent === ' ') {
             liList.className = 'space';
         }
         else {
             liList.className = 'letter';
         }
     }
-};
+}
 
 const phraseArray = getRandomPhraseAsArray(phrases);
-
 addPhrasetoDisplay(phraseArray); 
 
 
