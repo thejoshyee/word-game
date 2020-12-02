@@ -22,9 +22,9 @@ startGameBtn.addEventListener('click', e => {
 });
 
 
-// return a random phrase from an array
+// Function to return a random phrase from an array
 
-const getRandomPhraseAsArray = arr => {
+let getRandomPhraseAsArray = (arr) => {
     let phrase = phrases[Math.floor(Math.random() * phrases.length)].split(''); 
     return phrase;
 };
@@ -34,14 +34,14 @@ getRandomPhraseAsArray(phrases);
 
 // Adds the letters of a string to the display
 
-function addPhraseToDisplay(arr) {
-    for (let i = 0; i < arr.length; i++) {
+let addPhraseToDisplay = (arr) => {
+    for ( let i = 0; i < arr.length; i++ ) {
         let liList = document.createElement('li');
         let ulList = document.querySelector('#phrase ul');
         liList.textContent = arr[i];
         ulList.appendChild(liList);
 
-        if (liList.textContent === ' ') {
+        if (liList.textContent === '') {
             liList.className = 'space';
         }
         else {
@@ -51,6 +51,7 @@ function addPhraseToDisplay(arr) {
 };
 
 const phraseArray = getRandomPhraseAsArray(phrases);
+
 addPhrasetoDisplay(phraseArray); 
 
 
